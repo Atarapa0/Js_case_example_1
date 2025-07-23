@@ -1,0 +1,11 @@
+{
+  "name": "doviz-hesaplama",
+  "version": "1.0.0",
+  "scripts": {
+    "build-css": "lessc assets/css/style.less assets/css/style.css",
+    "watch-css": "lessc --watch assets/css/style.less assets/css/style.css"
+  },
+  "devDependencies": {
+    "less": "^4.1.3"
+  }
+}
