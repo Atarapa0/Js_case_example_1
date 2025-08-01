@@ -30,10 +30,12 @@ $(document).ready(function() {
             
             $('.left').empty();
             $('.right').empty();
+            $('.row').empty();
 
             response.forEach((item, index) => {
                 const calculated = dailyChangeExchange(item, index);
                 const card = `
+                <div class=col-lg-6>
                     <div class="item">
                          <div class="info">
                               <img class="image" src="assets/img/${item.Code.toLowerCase()}.png" alt="${item.Code}">
@@ -53,14 +55,11 @@ $(document).ready(function() {
                                   <span class="number">${item.SellingPrice.toFixed(2)}</span>
                             </div>
                          </div>
+                     </div>
                      </div> `;
 
                 // indexe göre ilk 3 item sola, kalanları sağa ekle
-                if (index < 3) {
-                    $('.left').append(card);
-                } else {
-                    $('.right').append(card);
-                }
+                $('.row').append(card);
             });
         },
         error: function (error) {

@@ -1,3 +1,4 @@
+@import "variables.less";
 @primary-color: #007bff;
 @spacing: 20px;
 
@@ -17,9 +18,8 @@
     .row {
         display: flex;
         flex-wrap: wrap;
-        margin: -(@spacing / 2);
-        gap: @spacing;
-
+       //gap: @spacing;
+/*
         .left {
 
             flex: 1;
@@ -39,7 +39,7 @@
             @media (max-width: 768px) {
                 flex-basis: 100%;
             }
-        }
+        }*/
 
         .item {
             display: flex;
@@ -126,35 +126,46 @@
 
     .button-row {
         display: flex;
-        justify-content: space-between;
-        margin-top: @spacing;
-        height: 100%;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 20px;
+        width: 100%;
+        @media @mobile {
+            flex-direction: row;
+            flex-wrap: wrap;
+            
+        }
 
         .right_button {
             .btn {
-                background-color: white;
+                background-color: rgb(202, 48, 48);
                 color: rgb(0, 0, 0);
-                padding: 10px 150px;
+                padding: 25px 15px;
                 cursor: pointer;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                text-align: center;
 
-                &:hover {
-                    background-color: rgb(44, 44, 44);
-                     color: white;
-                }
+
             }
         }
 
         .left_button {
             .btn {
-                background-color: rgb(44, 44, 44);
+                background-color: rgb(200, 99, 231);
                 color: rgb(255, 255, 255);
-                padding: 10px 150px;
+                padding: 25px 15px;
                 cursor: pointer;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
 
-                &:hover {
-                    background-color: rgb(255, 255, 255);
-                    color: rgb(0, 0, 0);
-                }
+
             }
 
         }
